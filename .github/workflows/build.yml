@@ -87,7 +87,7 @@ jobs:
     - name: Configure
       working-directory: ${{ github.workspace }}\out\build
 #      run: cmake -G Ninja ../.. -DSPACEXPANSE_MAKE_DOC=OFF -DIRRKLANG_DIR:STRING="irrKlang_DOWNLOAD" -DDXSDK_DIR:PATH="${{ github.workspace }}\\DXSDK"
-      run: cmake -G Ninja ../.. -DCMAKE_LIBRARY_PATH_FLAG:PATH="${{ github.workspace }}\lib" -DCMAKE_INCLUDE_PATH_FLAG:PATH="${{ github.workspace }}\include"
+      run: cmake -G Ninja ../.. -DLIB:PATH="${{ github.workspace }}\lib" -DINCLUDE:PATH="${{ github.workspace }}\include"
                   
     - name: Build
       working-directory: ${{ github.workspace }}\out\build
