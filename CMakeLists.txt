@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
 project(hello)
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+link_directories(${CMAKE_SOURCE_DIR}/lib)
+
 set(packages "libspex" "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
 
 add_executable(hello hello.cpp)
