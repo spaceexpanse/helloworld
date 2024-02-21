@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.0)
 project(hello)
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
-link_directories(${CMAKE_SOURCE_DIR}/lib)
-
 set(packages "libspex" "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
 
 add_executable(hello hello.cpp)
+
+# TODO: Add tests and install targets if needed.
+include_directories("include")
+link_directories("lib")
 
 target_compile_options(hello PRIVATE "-Wall" "-Werror" "-Wno-deprecated" "-Wno-deprecated-declarations" "-pedantic" "-std=c++14" "-DGLOG_NO_ABBREVIATED_SEVERITIES")
 

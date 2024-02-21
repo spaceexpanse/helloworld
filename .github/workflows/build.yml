@@ -88,7 +88,7 @@ jobs:
       working-directory: ${{ github.workspace }}\out\build
 #      run: cmake -G Ninja ../.. -DSPACEXPANSE_MAKE_DOC=OFF -DIRRKLANG_DIR:STRING="irrKlang_DOWNLOAD" -DDXSDK_DIR:PATH="${{ github.workspace }}\\DXSDK"
       run: cmake -G Ninja ../..
-      
+                  
     - name: Build
       working-directory: ${{ github.workspace }}\out\build
       run: cmake --build . --config RelWithDebInfo
