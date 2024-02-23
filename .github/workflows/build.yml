@@ -74,23 +74,13 @@ jobs:
 #         del DXSDK_Jun10.exe
 #         dir /S /B DXSDK
 
-    - name: Download DirectX SDK
-      if:   steps.cache.outputs.cache-hit != 'true'
+    - name: Copy folders
+#      if:   steps.cache.outputs.cache-hit != 'true'
       shell: cmd
       run: |
 #         curl -L https://download.microsoft.com/download/a/e/7/ae743f1f-632b-4809-87a9-aa1bb3458e31/DXSDK_Jun10.exe -o DXSDK_Jun10.exe
          xcopy ${{ github.workspace }}\lib\*.* C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86
          xcopy ${{ github.workspace }}\include\*.* C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include
-
-#    - name: Download DirectX SDK
-#      if:   steps.cache.outputs.cache-hit != 'true'
-#      shell: cmd
-#      run: |
-#         curl -L https://download.microsoft.com/download/a/e/7/ae743f1f-632b-4809-87a9-aa1bb3458e31/DXSDK_Jun10.exe -o DXSDK_Jun10.exe
-#         7z x DXSDK_Jun10.exe DXSDK/Include
-#         7z x DXSDK_Jun10.exe DXSDK/Lib
-#         del DXSDK_Jun10.exe
-#         dir /S /B DXSDK
 
     - name: Configure
       working-directory: ${{ github.workspace }}\out\build
