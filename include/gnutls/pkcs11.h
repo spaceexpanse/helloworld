@@ -67,8 +67,8 @@ typedef struct gnutls_pkcs11_obj_st *gnutls_pkcs11_obj_t;
 # define GNUTLS_PKCS11_FLAG_AUTO_TRUSTED (1<<1)	/* Automatically load trusted libraries by reading /etc/gnutls/pkcs11.conf */
 
 /* pkcs11.conf format:
- * load = /lib/xxx-pkcs11.so
- * load = /lib/yyy-pkcs11.so
+ * load = \lib/xxx-pkcs11.so
+ * load = \lib/yyy-pkcs11.so
  */
 
 int gnutls_pkcs11_init(unsigned int flags, const char *deprecated_config_file);
