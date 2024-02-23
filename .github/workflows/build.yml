@@ -21,6 +21,7 @@ jobs:
     
     env:
       DXSDK_DIR: "${{ github.workspace }}\\DXSDK"
+      PKG_CONFIG_PATH: "${{ github.workspace }}\\lib\\pkgconfig"
       
     strategy:
       fail-fast: false
@@ -83,13 +84,6 @@ jobs:
 #         7z x DXSDK_Jun10.exe DXSDK/Lib
 #         del DXSDK_Jun10.exe
 #         dir /S /B DXSDK
-
-    - name: Cache packages
-      id:   cache
-      uses: actions/cache@v3
-      with:
-        path: "${{ github.workspace }}\\lib\\pkgconfig"
-        key: PKG_CONFIG_PATH
 
 #    - name: Copy folders
 #      if:   steps.cache.outputs.cache-hit != 'true'
