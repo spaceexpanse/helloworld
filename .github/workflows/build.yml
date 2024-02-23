@@ -68,13 +68,9 @@ jobs:
       id:   cache
     - uses: actions/cache@v3
       with:
-        path: |
-#          depends/built
-#          depends/sdk-sources
-          out\build
-#          depends/x86_64-w64-mingw32          
+        path: out\build
         key: windows-2019-build-${{ matrix.architecture }}-cmake-${{ env.NOW }}
-        restore-keys: windows-2019-builds-${{ matrix.architecture }}-cmake-
+        restore-keys: windows-2019-build-${{ matrix.architecture }}-cmake-
 
 #    - name: Download DirectX SDK
 #      if:   steps.cache.outputs.cache-hit != 'true'
