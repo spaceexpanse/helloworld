@@ -84,6 +84,13 @@ jobs:
 #         del DXSDK_Jun10.exe
 #         dir /S /B DXSDK
 
+    - name: Copy folders
+#      if:   steps.cache.outputs.cache-hit != 'true'
+      shell: cmd
+      run: |
+         xcopy ${{ github.workspace }}\lib\*.* C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86
+         xcopy ${{ github.workspace }}\include\*.* C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include
+
     - name: Configure
       working-directory: ${{ github.workspace }}\out\build
 #      run: cmake -G Ninja ../.. -DSPACEXPANSE_MAKE_DOC=OFF -DIRRKLANG_DIR:STRING="irrKlang_DOWNLOAD" -DDXSDK_DIR:PATH="${{ github.workspace }}\\DXSDK"
