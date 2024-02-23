@@ -246,7 +246,7 @@
 // matchers can be defined by the user implementing the
 // MatcherInterface<T> interface if necessary.
 //
-// See googletest\include/gtest/gtest-matchers.h for the definition of class
+// See googletest/include/gtest/gtest-matchers.h for the definition of class
 // Matcher, class MatcherInterface, and others.
 
 // IWYU pragma: private, include "gmock/gmock.h"
