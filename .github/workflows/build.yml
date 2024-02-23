@@ -62,7 +62,7 @@ jobs:
 #      uses: actions/cache@v3
 #      with:
 #        path: "${{ github.workspace }}\\DXSDK"
- #       key:  dxsdk_jun10
+#        key:  dxsdk_jun10
 
 #    - name: Download DirectX SDK
 #      if:   steps.cache.outputs.cache-hit != 'true'
@@ -84,13 +84,19 @@ jobs:
 #         del DXSDK_Jun10.exe
 #         dir /S /B DXSDK
 
-    - name: Copy folders
+    - name: Cache packages
+      uses: actions/cache@v3
+      with:
+        path: ${{ github.workspace }}\lib\pkgconfig
+        key: PKG_CONFIG_PATH
+
+#    - name: Copy folders
 #      if:   steps.cache.outputs.cache-hit != 'true'
-      shell: cmd
-      run: |
-         xcopy /E /Y ${{ github.workspace }}\lib\*.pc C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
-         xcopy /E /Y ${{ github.workspace }}\lib\*.a C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
-         xcopy /E /Y ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\*.*
+#      shell: cmd
+#      run: |
+#         xcopy /E /Y ${{ github.workspace }}\lib\*.pc C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
+#         xcopy /E /Y ${{ github.workspace }}\lib\*.a C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
+#         xcopy /E /Y ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\*.*
 
     - name: Configure
       working-directory: ${{ github.workspace }}\out\build
