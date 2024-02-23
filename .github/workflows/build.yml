@@ -88,8 +88,8 @@ jobs:
 #      if:   steps.cache.outputs.cache-hit != 'true'
       shell: cmd
       run: |
-         xcopy /E ${{ github.workspace }}\lib\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86
-         xcopy /E ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include
+         xcopy /E /Y ${{ github.workspace }}\lib\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
+         xcopy /E /Y ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\*.*
 
     - name: Configure
       working-directory: ${{ github.workspace }}\out\build
