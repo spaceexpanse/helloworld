@@ -64,11 +64,12 @@ jobs:
 #      with:
 #        path: "${{ github.workspace }}\\DXSDK"
 #        key:  dxsdk_jun10
+
     - name: Cache output
       id:   cache
     - uses: actions/cache@v3
       with:
-        path: out\build
+        path: "out\build"
         key: windows-2019-build-${{ matrix.architecture }}-cmake-${{ env.NOW }}
         restore-keys: windows-2019-build-${{ matrix.architecture }}-cmake-
 
