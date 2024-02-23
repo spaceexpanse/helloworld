@@ -85,9 +85,10 @@ jobs:
 #         dir /S /B DXSDK
 
     - name: Cache packages
+      id:   cache
       uses: actions/cache@v3
       with:
-        path: ${{ github.workspace }}\lib\pkgconfig
+        path: "${{ github.workspace }}\\lib\\pkgconfig"
         key: PKG_CONFIG_PATH
 
 #    - name: Copy folders
