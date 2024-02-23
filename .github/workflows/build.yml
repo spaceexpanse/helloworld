@@ -65,13 +65,13 @@ jobs:
 #        path: "${{ github.workspace }}\\DXSDK"
 #        key:  dxsdk_jun10
 
-    - name: Cache output
-      id:   cache
-    - uses: actions/cache@v3
-      with:
-        path: "out\build"
-        key: windows-2019-build-${{ matrix.architecture }}-cmake-${{ env.NOW }}
-        restore-keys: windows-2019-build-${{ matrix.architecture }}-cmake-
+     - name: Cache output
+       id:   cache
+     - uses: actions/cache@v3
+       with:
+         path: "out\build"
+         key: windows-2019-build-${{ matrix.architecture }}-cmake-${{ env.NOW }}
+         restore-keys: windows-2019-build-${{ matrix.architecture }}-cmake-
 
 #    - name: Download DirectX SDK
 #      if:   steps.cache.outputs.cache-hit != 'true'
