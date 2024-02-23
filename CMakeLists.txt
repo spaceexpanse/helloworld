@@ -8,7 +8,7 @@ add_executable(hello hello.cpp)
 #include_directories("include")
 #link_directories("lib")
 
-target_compile_options(hello PRIVATE "-Wall" "-Wno-deprecated" "-Wno-deprecated-declarations" "-pedantic" "-std=c++14" "-DGLOG_NO_ABBREVIATED_SEVERITIES")
+target_compile_options(hello PRIVATE "-Wall" "-pedantic" "-std=c++14" "-DGLOG_NO_ABBREVIATED_SEVERITIES")
 #target_compile_options(hello PRIVATE "-Wall" "-Werror" "-Wno-deprecated" "-Wno-deprecated-declarations" "-pedantic" "-std=c++14" "-DGLOG_NO_ABBREVIATED_SEVERITIES" "-L${CMAKE_SOURCE_DIR}lib" "-I${CMAKE_SOURCE_DIR}include/${pkg}")
 
 foreach(pkg ${packages})
