@@ -99,7 +99,7 @@ jobs:
       run: |
         git clone -b v4.7.1 https://github.com/zeromq/cppzmq
         cd cppzmq
-        xcopy /E /Y /I zmq.hpp C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\zmq.hpp
+        echo F|xcopy /S /Q /Y /F zmq.hpp C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\zmq.hpp
         #sudo ldconfig  
 
     - name: Configure
