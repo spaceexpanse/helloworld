@@ -95,6 +95,13 @@ jobs:
 #         xcopy /E /Y ${{ github.workspace }}\lib\*.a C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
 #         xcopy /E /Y ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\*.*
 
+    - name: Build zmq
+      run: |
+        git clone -b v4.7.1 https://github.com/zeromq/cppzmq
+        cd cppzmq
+        sudo cp zmq.hpp /usr/local/include
+        sudo ldconfig  
+
     - name: Configure
       working-directory: ${{ github.workspace }}\out\build
 #      run: cmake -G Ninja ../.. -DSPACEXPANSE_MAKE_DOC=OFF -DIRRKLANG_DIR:STRING="irrKlang_DOWNLOAD" -DDXSDK_DIR:PATH="${{ github.workspace }}\\DXSDK"
