@@ -99,7 +99,12 @@ jobs:
       run: |
         git clone -b v4.7.1 https://github.com/zeromq/cppzmq
         cd cppzmq
-        echo F|xcopy /S /Q /Y /F zmq.hpp ${{ github.workspace }}\include\zmq.hpp
+        echo F|xcopy /S /Q /Y /F zmq.* ${{ github.workspace }}\include\zmq.*
+        cd ..
+        git clone -b v4.7.1 https://github.com/zeromq/libzmq
+        cd libzmq/include
+        echo F|xcopy /S /Q /Y /F zmq.* ${{ github.workspace }}\include\zmq.*
+        cd ..        
         #sudo ldconfig  
 
     - name: Configure
