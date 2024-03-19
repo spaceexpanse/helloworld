@@ -101,7 +101,7 @@ jobs:
         cd cppzmq
         echo F|xcopy /S /Q /Y /F zmq.* ${{ github.workspace }}\include\zmq.*
         cd ..
-        git clone -b v4.7.1 https://github.com/zeromq/libzmq
+        git clone -b zeromq4-x https://github.com/zeromq/libzmq
         cd libzmq/include
         echo F|xcopy /S /Q /Y /F zmq.* ${{ github.workspace }}\include\zmq.*
         cd ..        
