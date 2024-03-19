@@ -52,8 +52,8 @@ jobs:
 
     - name: Create directories
       run: |
-        if not exist out\build\NUL mkdir out\build
-        if not exist out\install\NUL mkdir out\install
+        mkdir out\build
+        mkdir out\install
     
 #    - name: Cache irrKlang package
 #      uses: actions/cache@v3
