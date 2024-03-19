@@ -104,7 +104,11 @@ jobs:
         git clone -b zeromq4-x https://github.com/zeromq/libzmq
         cd libzmq/include
         echo F|xcopy /S /Q /Y /F zmq.* ${{ github.workspace }}\include\zmq.*
-        cd ..        
+        cd ..
+        git clone https://github.com/cai880210/libsqlite3-cmake
+        cd libsqlite3-cmake/src
+        echo F|xcopy /S /Q /Y /F sqlite3.* ${{ github.workspace }}\include\sqlite3.*
+        cd ..                
         #sudo ldconfig  
 
     - name: Configure
