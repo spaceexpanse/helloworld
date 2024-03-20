@@ -24,7 +24,7 @@ jobs:
       DXSDK_DIR: "${{ github.workspace }}\\DXSDK"
       PKG_CONFIG_PATH: "${{ github.workspace }}\\lib\\pkgconfig"
       LD_LIBRARY_PATH: "${{ github.workspace }}\\lib"
-      CXX_INCLUDE_PATH: "${{ github.workspace }}\\include"
+      #CXX_INCLUDE_PATH: "${{ github.workspace }}\\include"
       
     strategy:
       fail-fast: false
