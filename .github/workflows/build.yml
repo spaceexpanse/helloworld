@@ -58,7 +58,7 @@ jobs:
 #    - name: Cache irrKlang package
 #      uses: actions/cache@v3
 #      with:
-#        path: ${{ github.workspace }}\out\build\Extern\irrKlang/${{ matrix.architecture }}
+#        path: ${{ github.workspace }}\out\build\Extern\irrKlang\${{ matrix.architecture }}
 #        key: irrKlang-${{ matrix.architecture }}
         
 #    - name: Cache DirectX SDK
@@ -90,10 +90,10 @@ jobs:
 
     - name: Copy folders
 #      if:   steps.cache.outputs.cache-hit != 'true'
-      shell: cmd
-      run: |
-        cd ${{ github.workspace }}\lib && ls -la && cd ..
-        cd ${{ github.workspace }}\include && ls -la && cd ..                   
+#      shell: cmd
+#      run: |
+#        cd ${{ github.workspace }}\lib && ls -la && cd ..
+#        cd ${{ github.workspace }}\include && ls -la && cd ..                   
 #        xcopy /E /Y ${{ github.workspace }}\lib\*.pc C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
 #        xcopy /E /Y ${{ github.workspace }}\lib\*.a C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
 #        xcopy /E /Y ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\*.*
