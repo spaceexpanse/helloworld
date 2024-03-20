@@ -8,7 +8,7 @@ add_executable(hello hello.cpp)
 include_directories("include")
 link_directories("lib")
 
-target_compile_options(hello PRIVATE "-Wall" "-DGLOG_NO_ABBREVIATED_SEVERITIES" "-L${CMAKE_SOURCE_DIR}lib" "-I${CMAKE_SOURCE_DIR}include/${pkg}") "-DCMAKE_TOOLCHAIN_FILE=[vcpkg-root]\scripts\buildsystems\vcpkg.cmake"
+target_compile_options(hello PRIVATE "-Wall" "-DGLOG_NO_ABBREVIATED_SEVERITIES" "-L${CMAKE_SOURCE_DIR}lib" "-I${CMAKE_SOURCE_DIR}include/${pkg}" "-DCMAKE_TOOLCHAIN_FILE=C:/Users/bello/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake") 
 #target_compile_options(hello PRIVATE "-Wall" "-Werror" "-Wno-deprecated" "-Wno-deprecated-declarations" "-pedantic" "-std=c++14" "-DGLOG_NO_ABBREVIATED_SEVERITIES" "-L${CMAKE_SOURCE_DIR}lib" "-I${CMAKE_SOURCE_DIR}include/${pkg}")
 
 foreach(pkg ${packages})
