@@ -6,8 +6,8 @@ set(packages "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
 
 add_executable(hello hello.cpp)
 
-include_directories("include\${pkg}")
-link_directories("lib")
+#include_directories("include\${pkg}")
+#link_directories("lib")
 
 target_compile_options(hello PRIVATE "-Wall" "-DGLOG_NO_ABBREVIATED_SEVERITIES")
 #target_compile_options(hello PRIVATE "-Wall" "-DGLOG_NO_ABBREVIATED_SEVERITIES" "-L${CMAKE_SOURCE_DIR}lib" "-I${CMAKE_SOURCE_DIR}include\${pkg}")
