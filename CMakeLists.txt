@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(hello)
 
-set(packages "libspex" "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
+#set(packages "libspex" "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
+set(packages "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
 
 add_executable(hello hello.cpp)
 
