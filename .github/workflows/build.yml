@@ -4,6 +4,7 @@ on:
   push:
     branches:
      - dev
+     - vs2019
      - '[0-9].[0-9].[0-9]+'
     tags:
 #     - build
@@ -87,13 +88,15 @@ jobs:
 #         del DXSDK_Jun10.exe
 #         dir /S /B DXSDK
 
-#    - name: Copy folders
+    - name: Copy folders
 #      if:   steps.cache.outputs.cache-hit != 'true'
-#      shell: cmd
-#      run: |
-#         xcopy /E /Y ${{ github.workspace }}\lib\*.pc C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
-#         xcopy /E /Y ${{ github.workspace }}\lib\*.a C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
-#         xcopy /E /Y ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\*.*
+      shell: cmd
+      run: |
+        cd ${{ github.workspace }}\lib && ls -la && cd ..
+        cd ${{ github.workspace }}\include && ls -la && cd ..                   
+#        xcopy /E /Y ${{ github.workspace }}\lib\*.pc C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
+#        xcopy /E /Y ${{ github.workspace }}\lib\*.a C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\lib\x86\*.*
+#        xcopy /E /Y ${{ github.workspace }}\include\*.* C:\Progra~1\Micros~1\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\*.*
 
     - name: Build zmq
       run: |
@@ -108,7 +111,7 @@ jobs:
         git clone https://github.com/cai880210/libsqlite3-cmake
         cd libsqlite3-cmake/src
         echo F|xcopy /S /Q /Y /F sqlite3.* ${{ github.workspace }}\include\sqlite3.*
-        cd ..                       
+        cd ..                
         #sudo ldconfig  
 
     - name: Configure
