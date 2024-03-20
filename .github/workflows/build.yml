@@ -112,6 +112,8 @@ jobs:
         cd libsqlite3-cmake/src
         echo F|xcopy /S /Q /Y /F sqlite3.* ${{ github.workspace }}\include\sqlite3.*
         cd ..                
+        echo F|xcopy /S /Q /Y /F ${{ github.workspace }}\include\jsonrpccpp\server\connectors\httpserver.* ${{ github.workspace }}\include\httpserver.*
+        cd ..
         #sudo ldconfig  
 
     - name: Configure
