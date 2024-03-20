@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(hello)
 
+set (CMAKE_CXX_STANDARD 17)
 set(packages "libspex" "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
 #set(packages "jsoncpp" "libglog" "gflags" "libzmq" "openssl")
 
